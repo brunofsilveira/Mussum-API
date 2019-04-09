@@ -1,14 +1,19 @@
 package local.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.util.List;
 
 @Entity
 public class Usuario extends GenericModel {
 
-
+	
+	@NotNull
     private String email;
-    private String senha;
+    
+	@NotNull
+	private String senha;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
